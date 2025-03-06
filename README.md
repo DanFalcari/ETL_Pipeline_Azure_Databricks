@@ -56,17 +56,17 @@ A **Arquitetura Medallion** organiza os dados em três camadas, garantindo quali
 ##Como Executar o Projeto
 
 1. **Criar os Recursos no Azure:**
-   - Criar um **Resource Group** e uma **Storage Account**.
-   - Configurar um **Azure SQL Database**.
-   - Provisionar um **Databricks Workspace**.
+- Criar um **Resource Group** e uma **Storage Account**.
+- Configurar um **Azure SQL Database**.
+- Provisionar um **Databricks Workspace**.
      
 2. **Configurar o Databricks:**
-   - Criar Clusters e Notebooks.
-   - Conectar ao **Azure Data Lake Storage**.
-   - Instalar bibliotecas necessárias (PySpark, Pandas, Delta Lake).
+- Criar Clusters e Notebooks.
+- Conectar ao **Azure Data Lake Storage**.
+- Instalar bibliotecas necessárias (PySpark, Pandas, Delta Lake).
      
 3. **Rodar os Scripts ETL:**
-   - Executar notebooks para ingestão de dados (Bronze → Silver → Gold).
+- Executar notebooks para ingestão de dados (Bronze → Silver → Gold).
 
 
 ## Organização do projeto
