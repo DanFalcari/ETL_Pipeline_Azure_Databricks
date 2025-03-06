@@ -86,11 +86,5 @@ A **Arquitetura Medallion** organiza os dados em três camadas, garantindo quali
 1. Faça o clone do repositório.
 
     ```bash
-    git clone git@github.com:DanFalcari/Projeto_diabetes.git
+    git@github.com:DanFalcari/ETL_Pipeline_Azure_Databricks.git
     ```
-
-2. Crie um ambiente virtual para o seu projeto utilizando o conda.
-
-      ```bash
-      conda env create -f ambiente.yml --name diabetes 
-      ```
