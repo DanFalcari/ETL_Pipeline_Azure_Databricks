@@ -1,38 +1,58 @@
-# Análise da base de dados de diabetes 
+# Projeto de ETL com Azure, Databricks e Arquitetura Medallion
 
-O diabetes é uma condição crônica grave que compromete a capacidade do organismo de regular os níveis de glicose no sangue de forma eficaz, o que pode resultar em uma diminuição da qualidade de vida e da expectativa de vida.
+## 📌 Descrição do Projeto
 
-O Sistema de Vigilância de Fatores de Risco Comportamentais (BRFSS) é uma pesquisa de saúde conduzida anualmente por telefone pelo Centro de Controle e Prevenção de Doenças dos Estados Unidos (CDC). Esse levantamento coleta informações de milhares de americanos sobre comportamentos de risco à saúde, condições crônicas e o uso de serviços preventivos.
+Este projeto implementa um pipeline de **ETL (Extract, Transform, Load)** utilizando a **Arquitetura Medallion** no **Azure Databricks**, integrando diferentes serviços do Azure para ingestão, processamento e armazenamento de dados estruturados e não estruturados.
 
-Neste projeto, foi utilizado o conjunto de dados do BRFSS referente ao ano de 2015, disponível no
+![imagem](imagens/Medallion_Architecture.PNG)
 
-Kaggle: https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset
+##  Arquitetura Medallion
 
-![imagem](imagens/capa_diabetes.jpg)
+A **Arquitetura Medallion** organiza os dados em três camadas, garantindo qualidade e estruturação progressiva:
+
+###  Camada Bronze (Raw Data)
+
+- Armazena os dados brutos exatamente como foram recebidos.
+- Mantém o histórico e possibilita reprocessamentos.
+- Dados provenientes de diferentes fontes são carregados no **Azure Data Lake Storage (Container)**.
+- Montagem da camada Bronze via **Databricks**:
+
+###  Camada Silver (Cleansed Data)
+
+- Processamento e limpeza dos dados utilizando **Azure Databricks** (Apache Spark).
+- Remoção de valores inconsistentes, duplicados e transformação dos tipos de dados.
+- Os dados são armazenados em **Azure SQL Database** e **Azure Data Lake Storage**.
+
+###  Camada Gold (Refined Data)
+
+- Contém dados agregados e enriquecidos para análise e visualização.
+- Prontos para consumo por **Power BI**, relatórios e modelos preditivos.
+
+##  Tecnologias e Serviços Utilizados
+
+###  **Azure Resources**
+
+- **Azure Resource Group**: Agrupamento dos recursos para melhor gerenciamento.
+- **Azure Storage Account**: Armazena dados brutos na camada Bronze.
+- **Azure Databricks**: Plataforma para processamento distribuído e transformação de dados.
+- **Azure SQL Database**: Armazena dados transformados na camada Silver.
+- **Azure Container Instances**: Para orquestração de execução de jobs de ETL.
+- **Azure Key Vault**: Gerenciamento seguro de credenciais.
+
+###  **Ferramentas e Linguagens**
+
+- **Python (Pandas, PySpark)**
+- **SQL (Azure SQL, SQL Database)**
+- **Apache Spark (Databricks Notebooks)**
+
+##  Fluxo de Processamento ETL
+
+1. **Extração (Extract)**: Coleta de dados de diversas fontes e armazenamento na camada Bronze (Azure Data Lake Storage).
+2. **Transformação (Transform)**: Processamento com Databricks para limpeza, tratamento e enriquecimento dos dados.
+3. **Carga (Load)**: Armazenamento dos dados refinados na camada Gold para análise e consumo.
+4. **Envio para o Azure SQL Database**:
 
 
-## Um pouco mais sobre a base de dados 
-
-[Clique aqui](referencias/01_dicionario_de_dados.md) para ver o dicionário de dados da base utlilizada
-
-
-## Resumo resultados obtidos
-
-### **Conclusões da análise dos dados**  
-
-**Fatores de Maior Risco para Diabetes:**  
-1. **Hipertensão (75.27%)** e **colesterol alto (67.01%)** → Reforçam a relação do diabetes com doenças cardiovasculares.  
-2. **Idade avançada** → Maior incidência a partir dos 50 anos.  
-3. **Sedentarismo** → Percentual menor de atividade física entre diabéticos (63.05%).  
-4. **Baixa escolaridade e renda** → Pode indicar falta de acesso a informação e cuidados médicos.  
-5. **Saúde Geral Ruim** → Quase 13% dos diabéticos avaliam sua saúde como "ruim".
-
-### **Correlações Importantes** 
-
-1. **A correlação entre doenças crônicas e saúde geral reforça a necessidade de prevenção.**
-2. **Baixa renda está associada a pior saúde e menos acesso a saúde, consultas médicas e alimentação de qualidade.**
-3. **Atividade física pode atuar como um fator de proteção para várias condições.**
-4. **Fumantes apresentam mais problemas cardíacos e metabólicos, o que confirma os riscos conhecidos.**
 
 ## Organização do projeto
 
