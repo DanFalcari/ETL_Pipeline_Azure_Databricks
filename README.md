@@ -53,6 +53,20 @@ A **Arquitetura Medallion** organiza os dados em três camadas, garantindo quali
 3. **Carga (Load)**: Armazenamento dos dados refinados na camada Gold para análise e consumo.
 4. **Envio para o Azure SQL Database**:
 
+##Como Executar o Projeto
+
+1. **Criar os Recursos no Azure:**
+   - Criar um **Resource Group** e uma **Storage Account**.
+   - Configurar um **Azure SQL Database**.
+   - Provisionar um **Databricks Workspace**.
+     
+2. **Configurar o Databricks:**
+   - Criar Clusters e Notebooks.
+   - Conectar ao **Azure Data Lake Storage**.
+   - Instalar bibliotecas necessárias (PySpark, Pandas, Delta Lake).
+     
+3. **Rodar os Scripts ETL:**
+   - Executar notebooks para ingestão de dados (Bronze → Silver → Gold).
 
 
 ## Organização do projeto
