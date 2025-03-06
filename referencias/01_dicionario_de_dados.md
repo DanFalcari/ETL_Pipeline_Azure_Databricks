@@ -1,24 +1,11 @@
-# Dicionário de dados
+# Dicionário de dados sales.csv
 
-- `Diabetes`: 0 = sem diabetes, 1 = com diabetes
-- `Pressao_Alta`: 0 = sem pressão alta, 1 = com pressão alta
-- `Colesterol_Alto`: 0 = sem colesterol alto, 1 = com colesterol alto
-- `Colesterol_Exame`: 0 = não fez exame de colesterol na vida, 1 = fez exame de colesterol alguma vez
-- `IMC`: Índice de Massa Corporal (IMC)
-- `Fumante`: 0 = não fumante, 1 = fumante
-- `AVC`: 0 = sem histórico de AVC, 1 = com histórico de AVC
-- `Problema_Cardiaco`: 0 = sem histórico de doença cardíaca ou ataque cardíaco, 1 = com histórico de doença cardíaca ou ataque cardíaco
-- `Atividade_Fisica`: 0 = não pratica atividade física, 1 = pratica atividade física
-- `Come_Frutas`: 0 = não consome frutas, 1 = consome frutas
-- `Come_Legumes`: 0 = não consome vegetais, 1 = consome vegetais
-- `Consumo_Bebida_Alcoolica`: 0 = não consome álcool em altas quantidades, 1 = consome álcool em altas quantidades
-- `Plano_Saude`: 0 = não tem plano de saúde, 1 = tem plano de saúde
-- `Sem_Dinheiro_Consultas`: 0 = não foi ao médico por questões financeiras, 1 = foi ao médico por questões financeiras (últimos 12 meses)
-- `Saude_Geral`: Saúde geral (1 a 5) - 1 = Excelente, 2 = Muito boa, 3 = Boa, 4 = Aceitável, 5 = Ruim
-- `Dias_Problemas_Mentais`: Nos últimos 30 dias, quantos dias a saúde mental não foi boa (0 a 30)
-- `Dias_Problemas_Fisicos`: Nos últimos 30 dias, quantos dias a saúde física não foi boa (0 a 30)
-- `Dificuldade_Andar`: 0 = não tem dificuldade para caminhar, 1 = tem dificuldade para caminhar
-- `Genero`: 0 = feminino, 1 = masculino
-- `Faixa_Idade`: Idade em faixas 1 = 18-24; 2 = 25-29; 3 = 30-34; 4 = 35-39; 5 = 40-44; 6 = 45-49; 7 = 50-54; 8 = 55-59; 9 = 60-64; 10 = 65-69; 11 = 70-74; 12 = 75-79; 13 = 80+
-- `Ensino`: Níveis de ensino 1 = nunca frequentou a escola; 2 = escola primária; 3 = escola secundária incompleta ; 4 = escola secundária; 5 = faculdade incompleta ou curso técnico; 6 = completou faculdade ou diplomas superiores
-- `Faixa_Renda`: Renda anual em faixas 1 = < 10.000; 2 = 10.000-14.999; 3 = 15.000-19.999; 4 = 20.000-24.999; 5 = 25.000-34.999; 6 = 35.000-49.999; 7 = 50.000-74.999; 8 = 75.000+
+- `id_venda`: Identificador único da venda
+- `id_comprador`: Identificador do comprador
+- `Nome`: Nome do comprador
+- `e-mail`: Endereço de e-mail do comprador
+- `id_produto`: Identificador do produto
+- `quantidade`: Quantidade de unidades compradas
+- `valor`: Valor total de venda 
+- `data_compra`: Data da campra
+
